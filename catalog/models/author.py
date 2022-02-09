@@ -3,26 +3,10 @@ from django.db import models
 
 # Imported from django_countries.
 from django_countries.fields import CountryField
-
 # https://pypi.org/project/django-countries/
 
-LANGUAGE_CHOICE = [
-	('European Languages ',
-	 (
-		 ('FR', 'French'),
-		 ('ES', 'Spanish'),
-		 ('PT', 'Portuguese'),
-		 ('DE', 'German'),
-		 ('EL', 'Greek'),
-	 )
-	 ),
-	('Asian Languages',
-	 (
-		 ('RU', 'Russian'),
-		 ('ZH', 'Chinese'),
-	 )
-	 ),
-]
+# List of languages.
+from .languaje import LANGUAGE_CHOICE
 
 
 class Author(models.Model):
@@ -53,7 +37,10 @@ class Author(models.Model):
 		blank_label='(select country)'
 	)
 	mother_tongue = models.CharField(
-		choices=LANGUAGE_CHOICE
+		choices=LANGUAGE_CHOICE,
+		max_length=2,
+		null=True,
+		blank=True,
 	)
 	books = models.ManyToManyField(
 		'Book',
