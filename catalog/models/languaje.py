@@ -3,6 +3,7 @@
 LANGUAGE_CHOICE = [
 	('European Languages ',
 	 (
+		 ('EN', 'English'),
 		 ('FR', 'French'),
 		 ('ES', 'Spanish'),
 		 ('PT', 'Portuguese'),
