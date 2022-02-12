@@ -1,0 +1,3 @@
+from .author_serializer_in import AuthorSerializerIn
+from .book_serializer_in import BookSerializerIn
+from .genre_serializer_in import GenreSerializerIn

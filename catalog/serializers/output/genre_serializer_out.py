@@ -1,7 +1,8 @@
 # Imported from Rest-Framework.
-from rest_framework import ModelSerializer
+from rest_framework.serializers import ModelSerializer
 
 # Models.
+
 from catalog.models.genre import Genre
 
 
