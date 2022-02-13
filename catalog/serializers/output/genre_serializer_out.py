@@ -2,7 +2,6 @@
 from rest_framework.serializers import ModelSerializer
 
 # Models.
-
 from catalog.models.genre import Genre
 
 
