@@ -1,12 +1,12 @@
 # Imported from Rest-Framework.
-from rest_framework import serializer
+from rest_framework.serializers import ModelSerializer
 from .genre_serializer_in import GenreSerializerIn
 
 # Models.
 from catalog.models import Book
 
 
-class BookSerializerIn(serializers.ModelSerializer):
+class BookSerializerIn(ModelSerializer):
     genre = GenreSerializerIn(many=True)
 
     class Meta:
