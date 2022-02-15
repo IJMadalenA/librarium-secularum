@@ -30,7 +30,7 @@ class BookFactory(DjangoModelFactory):
 	title = FuzzyText()
 	summary = FuzzyText()
 	isbn = FuzzyInteger(
-		1, 16
+		10, 1000
 	)
 	publish_year = FuzzyDate(
 		datetime.date(2000, 1, 1)

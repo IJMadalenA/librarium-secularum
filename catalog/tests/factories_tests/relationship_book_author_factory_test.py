@@ -18,4 +18,5 @@ class RelationshipBookAuthorTestCase(TestCase):
 		before_relationship_creation_num = RelationshipBookAuthor.objects.all().count()
 		relationship = RelationshipBookAuthorFactory()
 		
-		print('oooooooooooooooooooo')
+		self.assertTrue(RelationshipBookAuthor.objects.get(id=relationship.id))
+		self.assertEqual(RelationshipBookAuthor.objects.all().count(), before_relationship_creation_num + 1)
