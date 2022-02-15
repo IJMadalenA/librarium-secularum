@@ -11,11 +11,11 @@ from catalog.factories import BookFactory
 class BookFactoryTestCase(TestCase):
 	
 	def test_book_creation(self):
-		
 		for i in range(2):
 			BookFactory()
-			
+		
 		before_author_creation_num = Book.objects.all().count()
 		book = BookFactory()
 		
-		# Creating book.
+		self.assertTrue(Book.objects.get(id=book.id))
+		self.assertEqual(before_author_creation_num, Book.objects.all().count() - 1)

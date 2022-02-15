@@ -19,11 +19,10 @@ from catalog.models.languaje import LANGUAGE_CHOICE
 
 # Factories.
 from catalog.factories.author_factory import AuthorFactory
-from catalog.factories.genre_factory import GenreFactory
 
 
 class BookFactory(DjangoModelFactory):
-	
+
 	class Meta:
 		model = Book
 		
@@ -38,3 +37,4 @@ class BookFactory(DjangoModelFactory):
 	original_language = FuzzyChoice(
 		LANGUAGE_CHOICE
 	)
+	author = SubFactory(AuthorFactory)
