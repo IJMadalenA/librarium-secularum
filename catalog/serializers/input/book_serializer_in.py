@@ -7,7 +7,6 @@ from catalog.models import Book
 
 
 class BookSerializerIn(ModelSerializer):
-    genre = GenreSerializerIn(many=True)
 
     class Meta:
         model = Book
@@ -16,6 +15,5 @@ class BookSerializerIn(ModelSerializer):
             'summary',
             'isbn',
             'publish_year',
-            'language',
-            'genre',
+            'original_language',
         )

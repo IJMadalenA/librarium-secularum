@@ -35,8 +35,9 @@ class Book(models.Model):
 		null=False,
 		max_length=16
 	)
-	genre = models.ManyToManyField(
-		Genre,
+	genres = models.ManyToManyField(
+		'Genre',
+		through='RelationshipBookGenre',
 	)
 	authors = models.ManyToManyField(
 		'Author',
