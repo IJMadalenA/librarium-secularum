@@ -1,13 +1,10 @@
 # Imported from Django.
 import datetime
-
 from django.test import TestCase
-from datetime import date
 
 # Imported from Factory-Boy.
 from factory.fuzzy import (
     FuzzyText,
-    FuzzyInteger,
     FuzzyDate,
 )
 
@@ -34,4 +31,3 @@ class AuthorSerializerInTestCase(TestCase):
 
         serializer.save()
         self.assertTrue(Author.objects.filter(first_name=data['first_name']).exists())
-
