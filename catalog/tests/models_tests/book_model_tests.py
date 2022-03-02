@@ -14,4 +14,4 @@ class BookModelTestCase(TestCase):
         before_create = Book.objects.count()
         book = BookFactory()
         self.assertTrue(Book.objects.filter(id=book.id).exists())
-        self.assertEqual(Book.objects.count(), before_create +1)
+        self.assertEqual(Book.objects.count(), before_create + 1)
