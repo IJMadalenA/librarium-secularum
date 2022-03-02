@@ -6,12 +6,7 @@ from datetime import date
 from factory.fuzzy import (
     FuzzyText,
     FuzzyInteger,
-    FuzzyDate,
-    FuzzyChoice,
-
 )
-from factory import SubFactory
-
 
 # Models.
 from catalog.models import Book
@@ -20,13 +15,7 @@ from catalog.models import Book
 from catalog.serializers import BookSerializerIn
 
 # Factories.
-from catalog.factories import (
-    AuthorFactory,
-    BookFactory,
-    GenreFactory,
-)
-
-from catalog.models.languaje import LANGUAGE_CHOICE
+from catalog.factories import GenreFactory
 
 
 class BookSerializerInTestCase(TestCase):
