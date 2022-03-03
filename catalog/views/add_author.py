@@ -8,7 +8,7 @@ from rest_framework.response import Response
 from catalog.serializers import AuthorSerializerIn, AuthorSerializerOut
 
 
-class AuthorAddView(generics.GenericAPIView):
+class AddAuthorView(generics.GenericAPIView):
     permission_classes = [IsAuthenticated, ]
 
     def post(self, request):
