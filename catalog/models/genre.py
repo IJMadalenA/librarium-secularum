@@ -8,6 +8,9 @@ class Genre(models.Model):
 		null=False,
 		blank=False,
 	)
+	books = models.ManyToManyField(
+		'Book'
+	)
 	
 	def __str__(self):
 		return self.name
