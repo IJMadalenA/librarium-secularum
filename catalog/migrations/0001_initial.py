@@ -77,7 +77,7 @@ class Migration(migrations.Migration):
             name='BookInstance',
             fields=[
                 ('status', models.CharField(choices=[('Available', 'Ava'), ('Borrowed', 'Bor'), ('Reserved', 'Res'), ('LOST', 'Los')], default='Available', max_length=10)),
-                ('id', models.UUIDField(default=uuid.uuid4, help_text='Unique ID for this particular book across whole library', primary_key=True, serialize=False)),
+                ('id', models.UUIDField(default=uuid.uuid4, help_text='Unique ID for this particular book across whole librarium', primary_key=True, serialize=False)),
                 ('num_borrowed', models.PositiveIntegerField(blank=True, null=True)),
                 ('loan_date', models.DateField()),
                 ('return_date', models.DateField(blank=True, null=True)),

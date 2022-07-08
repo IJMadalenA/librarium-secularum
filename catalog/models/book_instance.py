@@ -23,7 +23,7 @@ class BookInstance(models.Model):
 	id = models.UUIDField(
 		primary_key=True,
 		default=uuid.uuid4,
-		help_text='Unique ID for this particular book across whole library'
+		help_text='Unique ID for this particular book across whole librarium'
 	)
 	num_borrowed = models.PositiveIntegerField(
 		null=True,
