@@ -1,3 +1,9 @@
+from .author_serializer_out import (
+    AuthorBasicSerializerOut,
+    AuthorSerializerOut,
+)
 from .genre_serializer_out import GenreSerializerOut
-from .author_serializer_out import AuthorSerializerOut
-from .book_serializer_out import BookSerializerOut
+from .book_serializer_out import (
+    BookBasicSerializerOut,
+    BookSerializerOut,
+)
