@@ -17,9 +17,9 @@ class AuthorBasicSerializerOut(ModelSerializer):
 	class Meta:
 		model = Author
 		fields = (
-			'first_name',
-			'last_name',
-			'Pseudonymous',
+			"first_name",
+			"last_name",
+			"Pseudonymous",
 		)
 
 
