@@ -5,7 +5,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 # Serializers.
-from catalog.serializers import AuthorSerializerIn, AuthorSerializerOut
+from catalog.serializers.input import AuthorSerializerIn
+from catalog.serializers.output import AuthorSerializerOut
 
 
 class AddAuthorView(generics.GenericAPIView):
