@@ -8,9 +8,6 @@ from rest_framework.serializers import (
 # Models imported.
 from catalog.models import Author
 
-# Serializers imported.
-from catalog.serializers.input import BookSerializerIn
-
 
 class AuthorSerializerIn(ModelSerializer):
 
@@ -53,14 +50,8 @@ class AuthorSerializerIn(ModelSerializer):
         required=True,
         allow_null=False,
     )
-    # nationalitu = serializers.CharField()
     mother_tongue = CharField(
         max_length=2,
         allow_null=True,
         allow_blank=True,
-    )
-    book = BookSerializerIn(
-        many=True,
-        allow_null=False,
-        required=True,
     )

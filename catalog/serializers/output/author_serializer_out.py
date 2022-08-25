@@ -9,7 +9,6 @@ from rest_framework.serializers import (
 from catalog.models import Author
 
 # Serializers imported.
-from catalog.serializers.output.book_serializer_out import BookBasicSerializerOut
 
 
 class AuthorBasicSerializerOut(ModelSerializer):
@@ -24,6 +23,9 @@ class AuthorBasicSerializerOut(ModelSerializer):
 
 
 class AuthorSerializerOut(AuthorBasicSerializerOut):
+	# To avoid a circular import, the "BookBasicSerializerOut" is imported directly
+	# inside the serializer that uses it.
+	from catalog.serializers.output.book_serializer_out import BookBasicSerializerOut
 
 	class Meta:
 		model = Author
@@ -37,27 +39,22 @@ class AuthorSerializerOut(AuthorBasicSerializerOut):
 
 	date_of_birth = DateField(
 		allow_null=False,
-		required=True,
 	)
 	date_of_death = DateField(
 		allow_null=True,
-		required=False,
 	)
 	nationality = CharField(
 		allow_blank=False,
 		allow_null=False,
-		required=True,
 	)
 	mother_tongue = CharField(
 		allow_blank=True,
 		allow_null=False,
 		max_length=2,
-		required=True,
 	)
 	books = BookBasicSerializerOut(
 		allow_null=True,
 		many=True,
 		partial=True,
 		read_only=True,
-		required=True,
 	)

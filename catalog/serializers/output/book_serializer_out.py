@@ -10,11 +10,11 @@ from rest_framework.validators import UniqueValidator
 from catalog.models.book import Book
 
 # Serializers imported.
-from catalog.serializers.output import AuthorBasicSerializerOut
-from catalog.serializers.output import GenreSerializerOut
+from catalog.serializers.output.genre_serializer_out import GenreSerializerOut
 
 
 class BookBasicSerializerOut(ModelSerializer):
+	from catalog.serializers.output.author_serializer_out import AuthorBasicSerializerOut
 
 	class Meta:
 		model = Book
@@ -30,32 +30,27 @@ class BookBasicSerializerOut(ModelSerializer):
 		allow_blank=False,
 		allow_null=False,
 		max_length=128,
-		required=True,
 		read_only=True,
 	)
 	summary = CharField(
 		allow_blank=True,
 		allow_null=True,
-		required=False,
 		read_only=True
 	)
 	publish_year = DateField(
 		allow_null=True,
 		read_only=True,
-		required=False,
 	)
 	genres = GenreSerializerOut(
 		allow_null=True,
 		many=True,
 		partial=True,
-		required=True,
 		read_only=True,
 	)
 	authors = AuthorBasicSerializerOut(
 		allow_null=True,
 		many=True,
 		partial=True,
-		required=True,
 		read_only=True,
 	)
 
@@ -72,7 +67,6 @@ class BookSerializerOut(BookBasicSerializerOut):
 	isbn = CharField(
 		allow_blank=False,
 		allow_null=False,
-		required=True,
 		max_length=16,
 		read_only=True,
 		validators=[UniqueValidator(queryset=Book.objects.all())]
@@ -80,7 +74,6 @@ class BookSerializerOut(BookBasicSerializerOut):
 	original_language = CharField(
 		allow_blank=False,
 		allow_null=False,
-		required=True,
 		max_length=16,
 		read_only=True,
 	)
