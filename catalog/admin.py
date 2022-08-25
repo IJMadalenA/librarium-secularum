@@ -22,7 +22,7 @@ admin.site.register(Genre)
 class BookInLine(admin.TabularInline):
     models = Book
     extra = 0
-    fields = ['title', 'isbn']
+    fields = ["title", "isbn"]
 
 
 class AuthorInLine(admin.TabularInline):
