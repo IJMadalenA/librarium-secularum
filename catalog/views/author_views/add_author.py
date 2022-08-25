@@ -8,6 +8,9 @@ from rest_framework.response import Response
 from catalog.serializers.input import AuthorSerializerIn
 from catalog.serializers.output import AuthorSerializerOut
 
+import logging
+logger = logging.getLogger(__name__)
+
 
 class AddAuthorView(generics.GenericAPIView):
     permission_classes = [IsAuthenticated, ]
