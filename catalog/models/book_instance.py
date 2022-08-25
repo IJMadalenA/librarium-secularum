@@ -10,10 +10,10 @@ from .publisher import Publisher
 
 class BookInstance(models.Model):
 	class BookStatus(models.TextChoices):
-		AVA = 'Available'
-		BOR = 'Borrowed'
-		RES = 'Reserved'
-		LOS = 'LOST'
+		AVA = "Available"
+		BOR = "Borrowed"
+		RES = "Reserved"
+		LOS = "LOST"
 	
 	status = models.CharField(
 		max_length=10,
@@ -23,7 +23,7 @@ class BookInstance(models.Model):
 	id = models.UUIDField(
 		primary_key=True,
 		default=uuid.uuid4,
-		help_text='Unique ID for this particular book across whole librarium'
+		help_text="Unique ID for this particular book across whole librarium"
 	)
 	num_borrowed = models.PositiveIntegerField(
 		null=True,
@@ -69,7 +69,7 @@ class BookInstance(models.Model):
 	)
 	
 	class Meta:
-		ordering = ['return_date']
+		ordering = ["return_date"]
 	
 	def __str__(self):
-		return f'{self.pk}, {self.book.title}'
+		return f"{self.pk}, {self.book.title}"

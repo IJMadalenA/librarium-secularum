@@ -9,7 +9,7 @@ class Genre(models.Model):
 		blank=False,
 	)
 	books = models.ManyToManyField(
-		'Book'
+		"Book"
 	)
 	
 	def __str__(self):

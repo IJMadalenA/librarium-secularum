@@ -21,4 +21,4 @@ class RelationshipBookAuthor(models.Model):
 	)
 	
 	def __str__(self):
-		return f'{self.book}, {self.author.first_name} {self.author.last_name}'
+		return f"{self.book}, {self.author.first_name} {self.author.last_name}"

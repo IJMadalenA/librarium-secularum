@@ -1,9 +1,6 @@
 # Imported from Django.
 from django.db import models
 
-# Models.
-from .genre import Genre
-
 # List of languages.
 from .languaje import LANGUAGE_CHOICE
 
@@ -19,7 +16,7 @@ class Book(models.Model):
 		blank=True,
 	)
 	isbn = models.CharField(
-		'ISBN',
+		"ISBN",
 		unique=True,
 		max_length=16,
 		null=False,
@@ -36,17 +33,17 @@ class Book(models.Model):
 		max_length=16
 	)
 	genres = models.ManyToManyField(
-		'Genre',
-		through='RelationshipBookGenre',
+		"Genre",
+		through="RelationshipBookGenre",
 	)
 	authors = models.ManyToManyField(
-		'Author',
-		through='RelationshipBookAuthor',
+		"Author",
+		through="RelationshipBookAuthor",
 	)
-	
+
 	def __str__(self):
-		return f'{self.title}'
-	
-	
+		return f"{self.title}"
+
+
 class Meta:
-	ordering = ['title']
+	ordering = ["authors", "title"]
