@@ -1,8 +1,9 @@
 # Imported from Django.
-from django.test import TestCase
 
+def test_factory_create_object(self, model, factory):
 
-class FactoryTemplateTestCase(TestCase):
+    before_create = model.objects.count()
 
-    def test_factory_create_object(self):
-
+    new_object = factory()
+    self.assertTrue(model.objects.filter(id=new_object.id).exists())
+    self.assertEqual(model.objects.count(), before_create + 1)
